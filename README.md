@@ -1,43 +1,57 @@
-# Astro Starter Kit: Minimal
+# davidrlyons.cloud
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Personal portfolio for **David R. Lyons** — AI / automation engineer.
+Static [Astro](https://astro.build) site, dark-modern design, content-driven.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Stack
 
-## 🚀 Project Structure
+- Astro (static), TypeScript
+- Vanilla CSS with design tokens (`src/styles/tokens.css`)
+- `@astrojs/sitemap`
+- Deploy: Vercel · Domain: Hostinger (`davidrlyons.cloud`)
 
-Inside of your Astro project, you'll see the following folders and files:
+## Structure
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+├── data/          # content (single source of truth)
+│   ├── site.ts            # name, headline, links
+│   ├── projects.ts        # Selected Work entries
+│   └── capabilities.ts    # capability clusters
+├── components/    # Nav, Hero, ProjectCard, SelectedWork,
+│                  # Capabilities, About, Footer
+├── styles/        # tokens.css, global.css
+└── pages/index.astro      # page composition + <head>
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+**To edit content**, change the files in `src/data/` — no markup edits needed.
+Adding a project = one entry in `src/data/projects.ts`.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Commands
 
-Any static assets, like images, can be placed in the `public/` directory.
+| Command           | Action                              |
+| :---------------- | :---------------------------------- |
+| `npm install`     | Install dependencies                |
+| `npm run dev`     | Dev server at `localhost:4321`      |
+| `npm run build`   | Build to `./dist/`                  |
+| `npm run preview` | Preview the production build        |
 
-## 🧞 Commands
+## Deploy (Vercel + Hostinger)
 
-All commands are run from the root of the project, from a terminal:
+1. Push this repo to GitHub.
+2. In Vercel: **New Project → import the repo**. Astro is auto-detected
+   (build `astro build`, output `dist`). Deploy.
+3. Vercel → Project → **Settings → Domains** → add `davidrlyons.cloud`.
+4. In Hostinger **hPanel → DNS**, add the records Vercel shows:
+   - `A  @  76.76.21.21` (Vercel apex), and
+   - `CNAME  www  cname.vercel-dns.com`
+   (use the exact values Vercel displays — they can change).
+5. Wait for DNS + SSL to provision. Done.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Before launch — fill these in
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [ ] `public/resume.pdf` — drop in the real resume
+- [ ] `src/data/site.ts` — real `github` + `linkedin` URLs
+- [ ] Confirm footer email (`david@davidrlyons.cloud`) and set up the
+      mailbox via Hostinger email hosting
+- [ ] Optional: add `public/og.png` (1200×630) for link previews
