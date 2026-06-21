@@ -28,8 +28,8 @@ export const site: SiteConfig = {
   headlineAccent: "built to ship.",
   sub: "I design and run self-hosted multi-agent systems and automation pipelines that produce real business results — not demos.",
   email: "david@davidrlyons.cloud",
-  github: "https://github.com/", // TODO: David's username
-  linkedin: "https://www.linkedin.com/", // TODO: David's profile
+  github: "https://github.com/davo42002",
+  linkedin: "https://www.linkedin.com/in/david-lyons-3a10ba111/",
   resume: "/resume.pdf", // TODO: drop real PDF into /public
   url: "https://davidrlyons.cloud",
   description:
