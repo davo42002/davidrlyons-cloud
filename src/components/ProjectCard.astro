@@ -1,0 +1,170 @@
+---
+import type { Project } from "../data/projects";
+interface Props {
+  project: Project;
+  index: number;
+}
+const { project, index } = Astro.props;
+const num = String(index + 1).padStart(2, "0");
+---
+
+<article class="card reveal">
+  <header class="card-head">
+    <span class="card-num">{num}</span>
+    <div>
+      <h3 class="card-name">{project.name}</h3>
+      <p class="card-tagline">{project.tagline}</p>
+    </div>
+  </header>
+
+  <dl class="card-body">
+    <div class="row">
+      <dt>Problem</dt>
+      <dd>{project.problem}</dd>
+    </div>
+    <div class="row">
+      <dt>Built</dt>
+      <dd>{project.built}</dd>
+    </div>
+    <div class="row">
+      <dt>Result</dt>
+      <dd>{project.result}</dd>
+    </div>
+  </dl>
+
+  <ul class="metrics">
+    {
+      project.metrics.map((m) => (
+        <li>
+          <span class="m-value">{m.value}</span>
+          <span class="m-label">{m.label}</span>
+        </li>
+      ))
+    }
+  </ul>
+
+  <ul class="tags">
+    {project.tech.map((t) => <li>{t}</li>)}
+  </ul>
+
+  {
+    project.links && (
+      <div class="card-links">
+        {project.links.map((l) => (
+          <a href={l.href} rel="noopener">
+            {l.label} &rarr;
+          </a>
+        ))}
+      </div>
+    )
+  }
+</article>
+
+<style>
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: clamp(1.4rem, 1rem + 1.6vw, 2.4rem);
+    transition: border-color var(--dur-normal) var(--ease-out-expo),
+      transform var(--dur-normal) var(--ease-out-expo);
+  }
+  .card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-4px);
+  }
+  .card-head {
+    display: flex;
+    gap: var(--space-4);
+    align-items: baseline;
+  }
+  .card-num {
+    font-family: var(--font-mono);
+    font-size: var(--fs-label);
+    color: var(--accent);
+    padding-top: 0.35rem;
+  }
+  .card-name {
+    font-size: var(--fs-h3);
+  }
+  .card-tagline {
+    margin-top: var(--space-1);
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+  }
+  .card-body {
+    margin-top: var(--space-6);
+    display: grid;
+    gap: var(--space-4);
+  }
+  .row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: var(--space-4);
+  }
+  .row dt {
+    font-family: var(--font-mono);
+    font-size: var(--fs-label);
+    letter-spacing: var(--label-spacing);
+    text-transform: uppercase;
+    color: var(--text-dim);
+    padding-top: 0.2rem;
+  }
+  .row dd {
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+  }
+  .metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-6) var(--space-8);
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--border);
+  }
+  .m-value {
+    display: block;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+  .m-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: var(--fs-label);
+    letter-spacing: var(--label-spacing);
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-6);
+  }
+  .tags li {
+    font-family: var(--font-mono);
+    font-size: var(--fs-label);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 0.3rem 0.7rem;
+  }
+  .card-links {
+    margin-top: var(--space-6);
+    display: flex;
+    gap: var(--space-6);
+  }
+  .card-links a {
+    color: var(--accent);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+  }
+  @media (max-width: 540px) {
+    .row {
+      grid-template-columns: 1fr;
+      gap: var(--space-1);
+    }
+  }
+</style>

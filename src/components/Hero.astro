@@ -1,0 +1,79 @@
+---
+import { site } from "../data/site";
+---
+
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <p class="label hero-eyebrow">{site.role}</p>
+    <h1 class="hero-title">
+      {site.headlineLead}<br />
+      <span class="accent">{site.headlineAccent}</span>
+    </h1>
+    <p class="hero-sub">{site.sub}</p>
+    <div class="hero-cta">
+      <a href="#work" class="btn btn-primary">View work</a>
+      <a href={site.resume} class="btn btn-ghost">Resume</a>
+      <a href={site.github} class="btn btn-ghost" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-block: clamp(5rem, 4rem + 9vw, 11rem) var(--space-section);
+  }
+  .hero-inner {
+    max-width: 54rem;
+  }
+  .hero-eyebrow {
+    margin-bottom: var(--space-6);
+  }
+  .hero-title {
+    font-size: var(--fs-hero);
+  }
+  .hero-title .accent {
+    color: var(--accent);
+  }
+  .hero-sub {
+    margin-top: var(--space-6);
+    max-width: 38rem;
+    font-size: var(--fs-lead);
+    color: var(--text-muted);
+  }
+  .hero-cta {
+    margin-top: var(--space-8);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    border-radius: var(--radius-sm);
+    padding: 0.7rem 1.2rem;
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    transition: transform var(--dur-fast) var(--ease-out-expo),
+      background var(--dur-fast), border-color var(--dur-fast), color
+      var(--dur-fast);
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--accent-contrast) !important;
+    box-shadow: 0 8px 30px var(--accent-glow);
+  }
+  .btn-primary:hover {
+    background: var(--accent-hover);
+  }
+  .btn-ghost {
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+  }
+  .btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+</style>
