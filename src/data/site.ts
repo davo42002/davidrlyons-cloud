@@ -26,12 +26,12 @@ export interface SiteConfig {
 
 export const site: SiteConfig = {
   name: "David R. Lyons",
-  role: "AI / Automation Engineer",
-  taglineLead: "AI agents & automation,",
-  taglineAccent: "built to ship.",
+  role: "Operations Leader · AI & Automation Builder",
+  taglineLead: "I lead teams and",
+  taglineAccent: "build the systems.",
   intro:
-    "I'm a self-taught engineer who turns ideas into systems that actually run — and earn their keep. I'm happiest taking something from \"what if\" to \"it's live in production,\" whether that's a fleet of AI agents, an automation pipeline, or a growth engine that brings a real business real revenue.",
-  sub: "I design and run self-hosted multi-agent systems and automation pipelines that produce real business results — not demos.",
+    "For 14+ years I've led operations and logistics teams — from dispatching trains across 2,000+ miles at Union Pacific to running a multi-million-dollar distribution center as a GM today. Along the way I taught myself to build the tools I wished I had: Power BI dashboards, automations, and AI agents that turn messy operational data into faster, smarter decisions. I lead people and I build systems — and I'm happiest doing both.",
+  sub: "Operations leader who builds: 14+ years scaling teams and logistics operations, plus self-taught AI/automation that turns data into real results.",
   photo: "/portrait.jpg", // TODO: drop real headshot into /public
   photoAlt: "David R. Lyons",
   email: "david@davidrlyons.cloud",
@@ -40,10 +40,12 @@ export const site: SiteConfig = {
   resume: "/resume.pdf", // TODO: drop real PDF into /public
   url: "https://davidrlyons.cloud",
   description:
-    "David R. Lyons — AI/automation engineer. Multi-agent systems, automation pipelines, and growth engineering with shipped, measurable outcomes.",
+    "David R. Lyons — operations & logistics leader and self-taught AI/automation builder. 14+ years scaling teams and operations, with Power BI, automation, and AI that drive measurable results.",
   nav: [
+    { label: "Experience", href: "#experience" },
     { label: "Work", href: "#work" },
     { label: "Capabilities", href: "#capabilities" },
+    { label: "Recommendations", href: "#recommendations" },
     { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },
   ],

@@ -1,0 +1,102 @@
+---
+import { recommendations } from "../data/recommendations";
+const initials = (name: string) =>
+  name
+    .split(" ")
+    .map((w) => w[0])
+    .join("");
+---
+
+<section class="section" id="recommendations">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="idx">04</span>
+      <h2>Recommendations</h2>
+    </div>
+
+    <div class="grid">
+      {
+        recommendations.map((rec) => (
+          <figure class="rec reveal">
+            <blockquote>“{rec.quote}”</blockquote>
+            <figcaption class="rec-by">
+              <span class="avatar" aria-hidden="true">{initials(rec.name)}</span>
+              <span class="who">
+                <span class="rec-name">{rec.name}</span>
+                <span class="rec-title">{rec.title}</span>
+                <span class="rec-rel">{rec.relation}</span>
+              </span>
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+  .rec {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--space-6);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: clamp(1.4rem, 1rem + 1.6vw, 2.2rem);
+  }
+  blockquote {
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+    line-height: 1.7;
+  }
+  .rec-by {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border);
+  }
+  .avatar {
+    flex: none;
+    width: 2.6rem;
+    height: 2.6rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--accent) 16%, var(--bg-raised));
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    font-weight: 700;
+  }
+  .who {
+    display: flex;
+    flex-direction: column;
+  }
+  .rec-name {
+    font-weight: 700;
+    color: var(--text);
+  }
+  .rec-title {
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
+  }
+  .rec-rel {
+    font-family: var(--font-mono);
+    font-size: var(--fs-label);
+    letter-spacing: var(--label-spacing);
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+  @media (max-width: 760px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

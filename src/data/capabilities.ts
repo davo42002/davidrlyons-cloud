@@ -7,6 +7,16 @@ export interface CapabilityGroup {
 
 export const capabilities: CapabilityGroup[] = [
   {
+    title: "Leadership",
+    items: [
+      "Team building & hiring",
+      "Coaching & mentoring",
+      "P&L / cost management",
+      "Operations & logistics",
+      "Safety & compliance",
+    ],
+  },
+  {
     title: "AI / Agents",
     items: [
       "Multi-agent orchestration",
