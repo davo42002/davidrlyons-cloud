@@ -9,9 +9,12 @@ export interface NavLink {
 export interface SiteConfig {
   name: string;
   role: string;
-  headlineLead: string;
-  headlineAccent: string;
+  taglineLead: string;
+  taglineAccent: string;
+  intro: string;
   sub: string;
+  photo: string;
+  photoAlt: string;
   email: string;
   github: string;
   linkedin: string;
@@ -24,9 +27,13 @@ export interface SiteConfig {
 export const site: SiteConfig = {
   name: "David R. Lyons",
   role: "AI / Automation Engineer",
-  headlineLead: "AI agents & automation,",
-  headlineAccent: "built to ship.",
+  taglineLead: "AI agents & automation,",
+  taglineAccent: "built to ship.",
+  intro:
+    "I'm a self-taught engineer who turns ideas into systems that actually run — and earn their keep. I'm happiest taking something from \"what if\" to \"it's live in production,\" whether that's a fleet of AI agents, an automation pipeline, or a growth engine that brings a real business real revenue.",
   sub: "I design and run self-hosted multi-agent systems and automation pipelines that produce real business results — not demos.",
+  photo: "/portrait.jpg", // TODO: drop real headshot into /public
+  photoAlt: "David R. Lyons",
   email: "david@davidrlyons.cloud",
   github: "https://github.com/davo42002",
   linkedin: "https://www.linkedin.com/in/david-lyons-3a10ba111/",
