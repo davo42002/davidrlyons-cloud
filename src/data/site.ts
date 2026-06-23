@@ -37,7 +37,7 @@ export const site: SiteConfig = {
   email: "david@davidrlyons.cloud",
   github: "https://github.com/davo42002",
   linkedin: "https://www.linkedin.com/in/david-lyons-3a10ba111/",
-  resume: "/resume.pdf", // TODO: drop real PDF into /public
+  resume: "/resume", // on-site resume page (links to PDF downloads)
   url: "https://davidrlyons.cloud",
   description:
     "David R. Lyons — operations & logistics leader and self-taught AI/automation builder. 14+ years scaling teams and operations, with Power BI, automation, and AI that drive measurable results.",

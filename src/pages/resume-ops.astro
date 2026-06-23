@@ -1,0 +1,27 @@
+---
+import ResumeDoc from "../components/ResumeDoc.astro";
+import { opsResume } from "../data/resume";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>David Lyons — Resume (Operations Leadership)</title>
+    <meta name="robots" content="noindex" />
+    <style>
+      body { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <ResumeDoc
+      data={opsResume}
+      downloads={[
+        { label: "Download PDF", href: "/resume-ops.pdf" },
+        { label: "Ops + AI version", href: "/resume.pdf" },
+      ]}
+    />
+  </body>
+</html>
