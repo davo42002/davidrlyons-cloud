@@ -34,7 +34,7 @@ export const site: SiteConfig = {
   sub: "Operations leader who builds: 14+ years scaling teams and logistics operations, plus self-taught AI/automation that turns data into real results.",
   photo: "/portrait.jpg", // TODO: drop real headshot into /public
   photoAlt: "David R. Lyons",
-  email: "david@davidrlyons.cloud",
+  email: "davidr.lyons@icloud.com",
   github: "https://github.com/davo42002",
   linkedin: "https://www.linkedin.com/in/david-lyons-3a10ba111/",
   resume: "/resume", // on-site resume page (links to PDF downloads)
