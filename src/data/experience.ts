@@ -67,4 +67,20 @@ export const experience: Job[] = [
       },
     ],
   },
+  {
+    company: "Clear Fork Surveying & Mapping Co., Inc.",
+    meta: "Full-time · May 2009 – Apr 2011 · Graham, TX",
+    roles: [
+      {
+        title: "Land Surveyor / Survey Engineer",
+        period: "May 2009 – Apr 2011",
+        location: "Graham, TX",
+        bullets: [
+          "Performed all aspects of the entire “field-to-finish” land survey, including GPS data collection and total-station surveys to determine property boundaries, riparian boundaries, easements, and well-location surveys for as-drilled and permit plat requirements.",
+          "Conducted project research to obtain legal descriptions from deeds and leases, then drafted legal descriptions and associated survey plats for deed records.",
+          "Computed map projections between State Plane grid coordinates and geographic latitude/longitude.",
+        ],
+      },
+    ],
+  },
 ];

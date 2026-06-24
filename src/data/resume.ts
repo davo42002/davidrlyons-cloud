@@ -91,6 +91,17 @@ const experience: ResumeRole[] = [
       "Elevated delivery timeliness by approximately 15% through strategic routing and scheduling adjustments, minimizing congestion across the rail network.",
     ],
   },
+  {
+    title: "Land Surveyor / Survey Engineer",
+    org: "Clear Fork Surveying & Mapping Co., Inc.",
+    location: "Graham, TX",
+    dates: "2009 – 2011",
+    bullets: [
+      "Performed all aspects of the entire field-to-finish land survey, including GPS data collection and total-station surveys to determine property boundaries, riparian boundaries, easements, and well-location surveys for as-drilled and permit plat requirements.",
+      "Conducted project research to obtain legal descriptions from deeds and leases, then drafted legal descriptions and associated survey plats for deed records.",
+      "Computed map projections between State Plane grid coordinates and geographic latitude/longitude.",
+    ],
+  },
 ];
 
 const education = ["Associate of Spatial Sciences — Texas A&M University"];
