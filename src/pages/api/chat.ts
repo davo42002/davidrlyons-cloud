@@ -17,6 +17,55 @@ function json(obj: unknown, status = 200) {
   });
 }
 
+// --- Abuse guards -----------------------------------------------------------
+const RATE_WINDOW_MS = 60_000;
+const RATE_MAX = 8; // requests per IP per window (best-effort, per warm instance)
+const hits = new Map<string, number[]>();
+
+function hostOf(value: string | null): string {
+  if (!value) return "";
+  try {
+    return new URL(value).host.toLowerCase();
+  } catch {
+    return "";
+  }
+}
+
+function isAllowedOrigin(request: Request): boolean {
+  // Require a recognizable browser origin/referer. Requests with neither
+  // (e.g. raw scripted POSTs) are rejected.
+  const src = hostOf(request.headers.get("origin")) || hostOf(request.headers.get("referer"));
+  if (!src) return false;
+  return (
+    src === "davidrlyons.cloud" ||
+    src === "www.davidrlyons.cloud" ||
+    src.endsWith(".vercel.app") ||
+    src.startsWith("localhost") ||
+    src.startsWith("127.0.0.1")
+  );
+}
+
+function clientIp(request: Request): string {
+  return (
+    (request.headers.get("x-forwarded-for") || "").split(",")[0].trim() ||
+    request.headers.get("x-real-ip") ||
+    "unknown"
+  );
+}
+
+function rateLimited(ip: string): boolean {
+  const now = Date.now();
+  const recent = (hits.get(ip) || []).filter((t) => now - t < RATE_WINDOW_MS);
+  if (recent.length >= RATE_MAX) {
+    hits.set(ip, recent);
+    return true;
+  }
+  recent.push(now);
+  hits.set(ip, recent);
+  if (hits.size > 5000) hits.clear(); // crude memory bound
+  return false;
+}
+
 function buildContext() {
   const r = builderResume;
   const exp = r.experience
@@ -77,16 +126,17 @@ export const POST: APIRoute = async ({ request }) => {
     );
   }
 
-  // Light same-origin guard.
-  const origin = request.headers.get("origin") || "";
-  if (
-    origin &&
-    !origin.includes("davidrlyons.cloud") &&
-    !origin.includes("localhost") &&
-    !origin.includes("127.0.0.1") &&
-    !origin.includes(".vercel.app")
-  ) {
+  // Must come from the site itself (blocks raw cross-origin / scripted calls).
+  if (!isAllowedOrigin(request)) {
     return json({ error: "Forbidden." }, 403);
+  }
+
+  // Per-IP rate limit.
+  if (rateLimited(clientIp(request))) {
+    return json(
+      { error: "You're asking quickly — give it a moment and try again." },
+      429
+    );
   }
 
   let body: { message?: unknown };
