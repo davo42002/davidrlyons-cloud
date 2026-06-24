@@ -1,0 +1,62 @@
+---
+const metrics = [
+  { value: "14+", label: "yrs operations leadership" },
+  { value: "54.5%", label: "company-standings jump" },
+  { value: "30", label: "person team led" },
+  { value: "2,000+", label: "miles of rail managed" },
+  { value: "4", label: "AI/automation systems built" },
+];
+---
+
+<section class="band" aria-label="Career highlights">
+  <div class="container">
+    <ul class="metrics reveal">
+      {
+        metrics.map((m) => (
+          <li>
+            <span class="m-value">{m.value}</span>
+            <span class="m-label">{m.label}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .band {
+    border-block: 1px solid var(--border);
+    background: var(--bg-raised);
+  }
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-6);
+    padding-block: var(--space-8);
+  }
+  .metrics li {
+    text-align: center;
+  }
+  .m-value {
+    display: block;
+    font-size: clamp(1.6rem, 1rem + 2vw, 2.4rem);
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+  }
+  .m-label {
+    display: block;
+    margin-top: var(--space-1);
+    font-family: var(--font-mono);
+    font-size: var(--fs-label);
+    letter-spacing: var(--label-spacing);
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  @media (max-width: 760px) {
+    .metrics {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6) var(--space-4);
+    }
+  }
+</style>

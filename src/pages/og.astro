@@ -1,0 +1,74 @@
+---
+import { site } from "../data/site";
+// Render target for the OG share image. Screenshot at 1200x630 → public/og.png
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>OG</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+    />
+    <style>
+      * { margin: 0; box-sizing: border-box; }
+      html, body { width: 1200px; height: 630px; overflow: hidden; }
+      .card {
+        width: 1200px;
+        height: 630px;
+        background:
+          radial-gradient(120% 90% at 12% 0%, rgba(245, 158, 11, 0.22) 0%, transparent 55%),
+          #0c0a08;
+        color: #f4efe8;
+        font-family: "Inter", system-ui, sans-serif;
+        padding: 84px 90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+      }
+      .eyebrow {
+        font-family: ui-monospace, monospace;
+        font-size: 22px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #f59e0b;
+        margin-bottom: 26px;
+      }
+      .name {
+        font-size: 104px;
+        font-weight: 800;
+        line-height: 0.98;
+        letter-spacing: -2px;
+      }
+      .tagline {
+        margin-top: 26px;
+        font-size: 36px;
+        font-weight: 600;
+        color: #e7decf;
+      }
+      .tagline b { color: #f59e0b; }
+      .foot {
+        position: absolute;
+        left: 90px;
+        bottom: 70px;
+        font-family: ui-monospace, monospace;
+        font-size: 22px;
+        color: #cbbfae;
+        letter-spacing: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="eyebrow">{site.role}</div>
+      <div class="name">{site.name}</div>
+      <div class="tagline">
+        I lead people, manage operations, <b>and build the systems.</b>
+      </div>
+      <div class="foot">davidrlyons.cloud</div>
+    </div>
+  </body>
+</html>

@@ -3,6 +3,7 @@ import "../styles/global.css";
 import { site } from "../data/site";
 import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
+import MetricsBand from "../components/MetricsBand.astro";
 import Experience from "../components/Experience.astro";
 import SelectedWork from "../components/SelectedWork.astro";
 import Capabilities from "../components/Capabilities.astro";
@@ -11,6 +12,38 @@ import About from "../components/About.astro";
 import Footer from "../components/Footer.astro";
 
 const ogImage = new URL("/og.png", site.url).href;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  jobTitle: "Operations Leader & AI / Automation Builder",
+  url: site.url,
+  email: `mailto:${site.email}`,
+  image: new URL("/portrait.jpg", site.url).href,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Forney",
+    addressRegion: "TX",
+    addressCountry: "US",
+  },
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Texas A&M University",
+  },
+  worksFor: { "@type": "Organization", name: "American Tire Distributors" },
+  sameAs: [site.github, site.linkedin],
+  knowsAbout: [
+    "Operations Management",
+    "Supply Chain & Logistics",
+    "Team Leadership",
+    "Power BI",
+    "Data Analysis",
+    "AI Agents",
+    "Automation",
+    "Python",
+  ],
+};
 ---
 
 <!doctype html>
@@ -26,6 +59,12 @@ const ogImage = new URL("/og.png", site.url).href;
     <title>{site.name} — {site.role}</title>
     <meta name="description" content={site.description} />
     <link rel="canonical" href={site.url} />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(personSchema)}
+    />
+
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content={site.url} />
@@ -50,6 +89,7 @@ const ogImage = new URL("/og.png", site.url).href;
     <Nav />
     <main>
       <Hero />
+      <MetricsBand />
       <Experience />
       <SelectedWork />
       <Capabilities />
