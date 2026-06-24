@@ -150,21 +150,20 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   // Per-IP rate limit — durable (Upstash) when configured, else in-memory.
+  // A rate-limiter failure must never take down the endpoint: fail open to
+  // the in-memory limiter.
   const ip = clientIp(request);
+  const tooMany = { error: "You're asking quickly — give it a moment and try again." };
   const rl = getUpstash();
   if (rl) {
-    const { success } = await rl.limit(ip);
-    if (!success) {
-      return json(
-        { error: "You're asking quickly — give it a moment and try again." },
-        429
-      );
+    try {
+      const { success } = await rl.limit(ip);
+      if (!success) return json(tooMany, 429);
+    } catch {
+      if (rateLimited(ip)) return json(tooMany, 429);
     }
   } else if (rateLimited(ip)) {
-    return json(
-      { error: "You're asking quickly — give it a moment and try again." },
-      429
-    );
+    return json(tooMany, 429);
   }
 
   let body: { message?: unknown };
