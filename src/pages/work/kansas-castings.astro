@@ -1,0 +1,210 @@
+---
+import "../../styles/global.css";
+import { site } from "../../data/site";
+
+const results = [
+  { value: "Google AI Overview", label: "ranked within 1 week" },
+  { value: "Real inbound RFQ", label: "direct revenue generated" },
+  { value: "100% inbox", label: "cold-email deliverability" },
+  { value: "11 pages", label: "rebuilt with full schema" },
+];
+const stack = [
+  "WordPress REST API",
+  "Python automation",
+  "JSON-LD schema",
+  "Google Workspace",
+  "Apollo.io",
+  "Smartlead",
+  "DKIM / SPF / DMARC",
+  "GA4 + Search Console",
+];
+const title = "Kansas Castings — AI-Driven Growth Engine";
+const desc =
+  "How I took a 30-year iron foundry from invisible to ranking in Google's AI Overview — and built the lead pipeline behind it.";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0c0a08" />
+    <title>{title} — David R. Lyons</title>
+    <meta name="description" content={desc} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:image" content={new URL("/og.png", site.url).href} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <main class="cs">
+      <div class="container">
+        <a href="/#work" class="back">← Back to work</a>
+
+        <header class="cs-head">
+          <p class="label">Case Study · Growth Engineering</p>
+          <h1>Kansas Castings</h1>
+          <p class="lead">{desc}</p>
+        </header>
+
+        <ul class="results">
+          {
+            results.map((r) => (
+              <li>
+                <span class="r-value">{r.value}</span>
+                <span class="r-label">{r.label}</span>
+              </li>
+            ))
+          }
+        </ul>
+
+        <section class="block">
+          <h2>The challenge</h2>
+          <p>
+            Kansas Castings is a 30-year-old American iron foundry that pours
+            specialty high-chrome white iron. The product was excellent; the web
+            presence wasn't. The site was thin and unranked, there was no inbound
+            pipeline, and the company was effectively invisible for the exact
+            searches its buyers run — phrases like "white iron castings supplier."
+            The brief: turn the site into something that finds customers.
+          </p>
+        </section>
+
+        <section class="block">
+          <h2>What I built</h2>
+          <h3>Technical SEO &amp; content</h3>
+          <p>
+            I rebuilt the site end-to-end through the WordPress REST API and
+            Python scripts — rewriting titles, meta, and on-page copy across all
+            11 pages, and fixing a site-wide missing-H1 problem at the template
+            level. Every page got accurate, buyer-intent content instead of
+            filler.
+          </p>
+          <h3>Structured data</h3>
+          <p>
+            I shipped a full JSON-LD schema stack — Organization, LocalBusiness,
+            Product, and FAQ markup — so search engines (and AI answer engines)
+            could actually understand what the foundry makes, where, and for whom.
+            This is the layer that made the AI Overview placement possible.
+          </p>
+          <h3>Lead capture</h3>
+          <p>
+            I built a custom RFQ quote form with server-side handling, email
+            routing, and a database backup of every submission — debugging a
+            hosting WAF quirk and SMTP authentication along the way so quotes
+            actually land in the owner's inbox.
+          </p>
+          <h3>Cold-outbound system</h3>
+          <p>
+            Beyond inbound, I stood up a full outbound engine: a dedicated sending
+            domain on Google Workspace with DKIM/SPF/DMARC and a warm-up schedule,
+            Apollo.io for targeted prospecting by vertical, and Smartlead running
+            multi-step sequences — reaching 100% inbox placement in deliverability
+            testing.
+          </p>
+        </section>
+
+        <section class="block">
+          <h2>Results</h2>
+          <p>
+            Within a week of launch, Kansas Castings surfaced in <strong>Google's
+            AI Overview</strong> for a high-intent buyer query — alongside far
+            larger national foundries. The SEO work produced a <strong>real
+            inbound RFQ</strong>: direct revenue, not a vanity metric. The
+            outbound system gave the owner a repeatable way to reach new buyers
+            on top of the inbound the site now generates.
+          </p>
+        </section>
+
+        <section class="block">
+          <h2>Stack</h2>
+          <ul class="tags">
+            {stack.map((t) => <li>{t}</li>)}
+          </ul>
+        </section>
+
+        <a href="/#contact" class="cta">Let's build something →</a>
+      </div>
+    </main>
+
+    <style>
+      .cs { padding-block: var(--space-12) var(--space-24); }
+      .back {
+        display: inline-block;
+        font-family: var(--font-mono);
+        font-size: var(--fs-label);
+        letter-spacing: var(--label-spacing);
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: var(--space-12);
+      }
+      .back:hover { color: var(--accent); }
+      .cs-head { max-width: 46rem; }
+      .cs-head h1 { margin: var(--space-3) 0; }
+      .lead { font-size: var(--fs-lead); color: var(--text-muted); }
+      .results {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-6);
+        margin: var(--space-12) 0;
+        padding: var(--space-8) 0;
+        border-block: 1px solid var(--border);
+      }
+      .r-value {
+        display: block;
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 1.05rem;
+      }
+      .r-label {
+        display: block;
+        margin-top: 2px;
+        font-family: var(--font-mono);
+        font-size: var(--fs-label);
+        letter-spacing: var(--label-spacing);
+        text-transform: uppercase;
+        color: var(--text-dim);
+      }
+      .block { max-width: 46rem; margin-bottom: var(--space-12); }
+      .block h2 {
+        font-size: var(--fs-h3);
+        margin-bottom: var(--space-4);
+      }
+      .block h3 {
+        font-size: 1.05rem;
+        color: var(--accent);
+        margin: var(--space-6) 0 var(--space-2);
+      }
+      .block p { margin-bottom: var(--space-3); }
+      .tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+      .tags li {
+        font-family: var(--font-mono);
+        font-size: var(--fs-label);
+        color: var(--text-muted);
+        border: 1px solid var(--border);
+        border-radius: 100px;
+        padding: 0.3rem 0.7rem;
+      }
+      .cta {
+        display: inline-block;
+        margin-top: var(--space-6);
+        background: var(--accent);
+        color: var(--accent-contrast);
+        font-weight: 700;
+        font-size: var(--fs-sm);
+        padding: 0.7rem 1.2rem;
+        border-radius: var(--radius-sm);
+      }
+      .cta:hover { background: var(--accent-hover); color: var(--accent-contrast); }
+      @media (max-width: 700px) {
+        .results { grid-template-columns: repeat(2, 1fr); gap: var(--space-6) var(--space-4); }
+      }
+    </style>
+  </body>
+</html>

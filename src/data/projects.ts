@@ -47,6 +47,7 @@ export const projects: Project[] = [
       "Apollo + Smartlead",
       "Email deliverability",
     ],
+    links: [{ label: "Read the case study", href: "/work/kansas-castings" }],
   },
   {
     slug: "aitrader",
