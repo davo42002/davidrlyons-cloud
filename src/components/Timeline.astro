@@ -1,0 +1,124 @@
+---
+const milestones = [
+  { year: "2009", role: "Land Surveyor", org: "Clear Fork" },
+  { year: "2011", role: "Train Dispatcher", org: "Union Pacific" },
+  { year: "2016", role: "Corridor Manager", org: "Union Pacific" },
+  { year: "2022", role: "Mgr, Yard Operations", org: "Union Pacific" },
+  { year: "2024", role: "General Manager", org: "American Tire Dist." },
+];
+---
+
+<div class="timeline reveal" aria-label="Career path">
+  <ol>
+    {
+      milestones.map((m, i) => (
+        <li>
+          <span class="dot" aria-hidden="true" />
+          <span class="yr">{m.year}</span>
+          <span class="role">{m.role}</span>
+          <span class="org">{m.org}</span>
+          {i === milestones.length - 1 && <span class="now">Today</span>}
+        </li>
+      ))
+    }
+  </ol>
+  <p class="thread">
+    <span class="thread-dot" aria-hidden="true"></span>
+    Self-taught data, automation &amp; AI throughout — a parallel build track.
+  </p>
+</div>
+
+<style>
+  .timeline {
+    margin-bottom: var(--space-12);
+  }
+  ol {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-4);
+    position: relative;
+    padding-top: var(--space-6);
+  }
+  ol::before {
+    content: "";
+    position: absolute;
+    top: calc(var(--space-6) + 5px);
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border-strong);
+  }
+  li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-top: var(--space-4);
+  }
+  .dot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+  li:last-child .dot {
+    background: var(--accent);
+  }
+  .yr {
+    font-family: var(--font-mono);
+    font-size: var(--fs-label);
+    color: var(--accent);
+    letter-spacing: var(--label-spacing);
+  }
+  .role {
+    font-weight: 700;
+    font-size: var(--fs-sm);
+  }
+  .org {
+    font-size: var(--fs-label);
+    color: var(--text-dim);
+  }
+  .now {
+    margin-top: 2px;
+    align-self: flex-start;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: var(--label-spacing);
+    text-transform: uppercase;
+    color: var(--accent-contrast);
+    background: var(--accent);
+    border-radius: 100px;
+    padding: 1px 7px;
+  }
+  .thread {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-6);
+    font-family: var(--font-mono);
+    font-size: var(--fs-label);
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+  }
+  .thread-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-glow);
+    flex: none;
+  }
+  @media (max-width: 760px) {
+    ol {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-6) var(--space-4);
+    }
+    ol::before { display: none; }
+    .dot { position: static; margin-bottom: 4px; }
+    li { padding-top: 0; }
+  }
+</style>
