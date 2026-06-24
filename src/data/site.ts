@@ -26,11 +26,11 @@ export interface SiteConfig {
 
 export const site: SiteConfig = {
   name: "David R. Lyons",
-  role: "Operations Leader · AI & Automation Builder",
-  taglineLead: "I lead teams and",
-  taglineAccent: "build the systems.",
+  role: "Operations Leadership & Management · AI Builder",
+  taglineLead: "I lead people, manage operations,",
+  taglineAccent: "and build the systems.",
   intro:
-    "For 14+ years I've led operations and logistics teams — from dispatching trains across 2,000+ miles at Union Pacific to running a multi-million-dollar distribution center as a GM today. Along the way I taught myself to build the tools I wished I had: Power BI dashboards, automations, and AI agents that turn messy operational data into faster, smarter decisions. I lead people and I build systems — and I'm happiest doing both.",
+    "For 14+ years I've led and managed operations and logistics teams — developing the people while running the day-to-day, from dispatching trains across 2,000+ miles at Union Pacific to running a multi-million-dollar distribution center as a GM today. Along the way I taught myself to build the tools I wished I had: Power BI dashboards, automations, and AI agents that turn messy operational data into faster, smarter decisions. Leadership and management, paired with the ability to build — that's the mix I bring.",
   sub: "Operations leader who builds: 14+ years scaling teams and logistics operations, plus self-taught AI/automation that turns data into real results.",
   photo: "/portrait.jpg", // TODO: drop real headshot into /public
   photoAlt: "David R. Lyons",
@@ -43,7 +43,7 @@ export const site: SiteConfig = {
     "David R. Lyons — operations & logistics leader and self-taught AI/automation builder. 14+ years scaling teams and operations, with Power BI, automation, and AI that drive measurable results.",
   nav: [
     { label: "Experience", href: "#experience" },
-    { label: "Work", href: "#work" },
+    { label: "Projects", href: "#work" },
     { label: "Capabilities", href: "#capabilities" },
     { label: "Recommendations", href: "#recommendations" },
     { label: "About", href: "#about" },

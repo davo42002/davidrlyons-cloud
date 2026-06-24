@@ -119,10 +119,10 @@ const projects: ResumeProject[] = [
 export const opsResume: ResumeData = {
   variant: "ops",
   name: "David Lyons",
-  headline: "Operations & Supply Chain Management Leader",
+  headline: "Operations Leadership & Supply Chain Management",
   contact,
   summary:
-    "Operations and logistics leader with 14+ years scaling teams and driving measurable performance — from a 54.5% jump in company-wide standings as a distribution-center GM to coordinating safe, on-time rail operations across 2,000+ miles. Data-driven operator skilled in Power BI, KPI management, and cost reduction who builds high-performing teams and dependable processes.",
+    "Operations leader and manager with 14+ years building high-performing teams and running dependable operations — from a 54.5% jump in company-wide standings as a distribution-center GM to coordinating safe, on-time rail operations across 2,000+ miles. Pairs people leadership with data-driven management (Power BI, KPIs, cost reduction) to deliver measurable performance.",
   experience,
   education,
   certifications,
@@ -143,10 +143,10 @@ export const opsResume: ResumeData = {
 export const builderResume: ResumeData = {
   variant: "builder",
   name: "David Lyons",
-  headline: "Operations Leader  |  AI & Automation Builder",
+  headline: "Operations Leadership & Management  |  AI & Automation Builder",
   contact,
   summary:
-    "Operations and logistics leader (14+ years) who also builds the systems — pairing team leadership and process turnarounds with self-taught data, automation, and AI. Drove a 54.5% jump in company-wide standings as a distribution-center GM while shipping Power BI analytics, automations, and AI agents that turn operational data into faster decisions and measurable results.",
+    "Operations leader and manager (14+ years) who also builds the systems — pairing people leadership with hands-on operations management, and both with self-taught data, automation, and AI. Drove a 54.5% jump in company-wide standings as a distribution-center GM while shipping Power BI analytics, automations, and AI agents that turn operational data into faster decisions and measurable results.",
   experience,
   projects,
   education,

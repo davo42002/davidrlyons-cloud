@@ -11,8 +11,18 @@ export const capabilities: CapabilityGroup[] = [
     items: [
       "Team building & hiring",
       "Coaching & mentoring",
-      "P&L / cost management",
+      "Culture & engagement",
+      "Cross-functional leadership",
+      "Talent development",
+    ],
+  },
+  {
+    title: "Management",
+    items: [
       "Operations & logistics",
+      "P&L / cost management",
+      "KPI & performance tracking",
+      "Process improvement",
       "Safety & compliance",
     ],
   },
