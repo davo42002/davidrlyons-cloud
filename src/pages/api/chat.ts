@@ -1,5 +1,7 @@
 import type { APIRoute } from "astro";
 import Anthropic from "@anthropic-ai/sdk";
+import { Ratelimit } from "@upstash/ratelimit";
+import { Redis } from "@upstash/redis";
 import { builderResume } from "../../data/resume";
 import { projects } from "../../data/projects";
 import { recommendations } from "../../data/recommendations";
@@ -64,6 +66,22 @@ function rateLimited(ip: string): boolean {
   hits.set(ip, recent);
   if (hits.size > 5000) hits.clear(); // crude memory bound
   return false;
+}
+
+// Durable cross-instance rate limit (used when Upstash env vars are present;
+// otherwise we fall back to the in-memory limiter above).
+let upstash: Ratelimit | null = null;
+function getUpstash(): Ratelimit | null {
+  if (upstash) return upstash;
+  const url = process.env.UPSTASH_REDIS_REST_URL;
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+  if (!url || !token) return null;
+  upstash = new Ratelimit({
+    redis: new Redis({ url, token }),
+    limiter: Ratelimit.slidingWindow(10, "60 s"),
+    prefix: "chat",
+  });
+  return upstash;
 }
 
 function buildContext() {
@@ -131,8 +149,18 @@ export const POST: APIRoute = async ({ request }) => {
     return json({ error: "Forbidden." }, 403);
   }
 
-  // Per-IP rate limit.
-  if (rateLimited(clientIp(request))) {
+  // Per-IP rate limit — durable (Upstash) when configured, else in-memory.
+  const ip = clientIp(request);
+  const rl = getUpstash();
+  if (rl) {
+    const { success } = await rl.limit(ip);
+    if (!success) {
+      return json(
+        { error: "You're asking quickly — give it a moment and try again." },
+        429
+      );
+    }
+  } else if (rateLimited(ip)) {
     return json(
       { error: "You're asking quickly — give it a moment and try again." },
       429
