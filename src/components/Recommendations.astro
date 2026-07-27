@@ -14,6 +14,12 @@ const initials = (name: string) =>
       <h2>Recommendations</h2>
     </div>
 
+    <p class="sec-lead reveal">
+      Four people who worked alongside me across a decade of operations
+      leadership — peers, a manager, and a counterpart at another railroad. None
+      of them were asked to write about the team. All of them did.
+    </p>
+
     <div class="grid">
       {
         recommendations.map((rec) => (
@@ -35,6 +41,12 @@ const initials = (name: string) =>
 </section>
 
 <style>
+  .sec-lead {
+    max-width: var(--maxw-prose);
+    margin-bottom: var(--space-8);
+    font-size: var(--fs-lead);
+    color: var(--text-muted);
+  }
   .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

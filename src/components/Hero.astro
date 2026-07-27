@@ -15,10 +15,13 @@ const initials = site.name
         {site.taglineLead} <span class="accent">{site.taglineAccent}</span>
       </p>
       <p class="hero-intro">{site.intro}</p>
+      <p class="hero-availability">
+        <span class="dot" aria-hidden="true"></span>{site.availability}
+      </p>
       <div class="hero-cta">
         <a href="#work" class="btn btn-primary">See what I've built</a>
         <a href={site.resume} class="btn btn-ghost">Resume</a>
-        <a href={site.github} class="btn btn-ghost" rel="noopener">GitHub</a>
+        <a href={site.linkedin} class="btn btn-ghost" rel="noopener">LinkedIn</a>
       </div>
     </div>
 
@@ -69,8 +72,25 @@ const initials = site.name
     font-size: var(--fs-lead);
     color: var(--text-muted);
   }
+  .hero-availability {
+    margin-top: var(--space-5);
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
+  }
+  .hero-availability .dot {
+    flex: none;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+  }
   .hero-cta {
-    margin-top: var(--space-8);
+    margin-top: var(--space-6);
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-3);

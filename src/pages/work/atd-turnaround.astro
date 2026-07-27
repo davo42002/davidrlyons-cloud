@@ -1,0 +1,104 @@
+---
+import CaseStudy from "../../layouts/CaseStudy.astro";
+
+const results = [
+  { value: "Bottom → top", label: "company-wide DC standings" },
+  { value: "+54.5%", label: "standings improvement" },
+  { value: "−15%", label: "overtime expense" },
+  { value: "+7.3%", label: "delivery-window success" },
+];
+const stack = [
+  "Power BI",
+  "Excel automation",
+  "KPI design",
+  "Manifest & route analysis",
+  "Inventory variance",
+  "DOT compliance",
+  "Team leadership",
+];
+const title = "Distribution Center Turnaround — Bottom Quartile to Top";
+const desc =
+  "Taking a multi-million-dollar distribution center from the bottom quartile of the company standings to the top — with dashboards, tooling, and a 30-person team.";
+---
+
+<CaseStudy
+  title={title}
+  desc={desc}
+  label="Case Study · Operations & Analytics"
+  heading="DC Turnaround"
+  results={results}
+  stack={stack}
+>
+  <section class="block">
+    <h2>The situation</h2>
+    <p>
+      I took over a multi-million-dollar distribution center sitting in the bottom
+      quartile of its company-wide performance standings. Overtime was high, inventory
+      variance was unexplained, and delivery windows were missed often enough that
+      customers noticed. Nobody could see the problem in time to act on it —
+      performance was something you learned about after the month closed.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>What I did</h2>
+    <h3>Made the day visible</h3>
+    <p>
+      I stood up Power BI dashboards for daily order monitoring, so disruptions
+      surfaced the morning they happened instead of in a month-end report. The
+      metrics that mattered — fill, on-time windows, labor hours against volume —
+      became something the team could look at and steer by.
+    </p>
+    <h3>Built the tooling</h3>
+    <p>
+      Custom Excel tooling replaced the manual spreadsheets the operation had been
+      running on, lifting warehouse efficiency roughly 10% and giving supervisors a
+      repeatable way to plan a shift rather than react to one.
+    </p>
+    <h3>Attacked the cost line</h3>
+    <p>
+      Targeted scheduling and process changes cut overtime expense 15% while
+      inventory variance improved — the two numbers that usually move in opposite
+      directions when a DC is under pressure.
+    </p>
+    <h3>Fixed delivery reliability</h3>
+    <p>
+      Driver training, manifest analysis, and tighter DOT compliance raised
+      route-delivery window success 7.3%. Analysis pointed at which routes and
+      which handoffs were failing; the training closed them.
+    </p>
+    <h3>Built the team</h3>
+    <p>
+      Thirty people — hiring, mentoring, and data-driven training programs. This
+      is the part that doesn't show up in a dashboard screenshot: overtime doesn't
+      drop 15% because a report says it should. It drops because supervisors trust
+      the numbers, the crew trusts the supervisors, and problems get raised on
+      shift instead of discovered at month-end. The coaching and the analytics were
+      the same project.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>The result</h2>
+    <p>
+      The center climbed from the bottom quartile to the top of the company-wide
+      standings — a 54.5% improvement in ranked performance — while costing less to
+      run and delivering more reliably than it had at the bottom.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>Why it's here</h2>
+    <p>
+      This is the same instinct behind everything else on this site: find the
+      measurement that doesn't exist yet, build the thing that produces it, then
+      let the numbers drive the decisions. The tools were Power BI and Excel
+      instead of Python and SQL. The method was identical.
+    </p>
+  </section>
+
+  <p class="note">
+    Figures are the relative performance improvements reported on my résumé. No
+    employer-internal data, reporting, or systems are reproduced here.
+  </p>
+</CaseStudy>

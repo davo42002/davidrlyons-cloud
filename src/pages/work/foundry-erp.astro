@@ -1,0 +1,125 @@
+---
+import CaseStudy from "../../layouts/CaseStudy.astro";
+
+const results = [
+  { value: "39,807 orders", label: "legacy records migrated" },
+  { value: "~$12k / year", label: "subscription targeted for retirement" },
+  { value: "9 modules", label: "live in pilot on their server" },
+  { value: "3,150 photos", label: "auto-matched to parts" },
+];
+const stack = [
+  "MySQL 8",
+  "SQL schema design",
+  "Python",
+  "REST APIs",
+  "QuickBooks Online API",
+  "Windows Server 2019",
+  "Tailscale",
+  "Data migration",
+];
+const title = "Foundry ERP — Replacing a $12k/yr System";
+const desc =
+  "Building the production system a 30-year iron foundry actually runs on — order entry through pour, ship, and invoice — to retire a five-figure annual subscription.";
+---
+
+<CaseStudy
+  title={title}
+  desc={desc}
+  label="Case Study · Operations Engineering"
+  heading="Foundry ERP"
+  results={results}
+  stack={stack}
+>
+  <section class="block">
+    <h2>The challenge</h2>
+    <p>
+      A 30-year American iron foundry ran on two systems at once: a 2007-era
+      in-house app holding three decades of order history, and a cloud ERP costing roughly $12,000 a
+      year. Every order got typed into both. The cloud product was disliked, its
+      scheduling module unused, and its data was locked behind a subscription that
+      would take everything with it the day it lapsed.
+    </p>
+    <p>
+      The brief: one system, owned outright, that covers what they actually use —
+      and get the history out before the meter stops.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>Starting with the data</h2>
+    <p>
+      Before writing a line of application code I mapped the legacy MySQL schema —
+      16 tables, ~40,000 orders, 4,000 parts, 325 customers — and found the joins
+      nobody had documented (orders carry no customer key; they reach customers
+      only through the part record). That mapping is what made everything after it
+      possible: revenue by customer, scrap rate by part, backlog by due month.
+    </p>
+    <p>
+      I pulled the incumbent ERP's tables out through its own reporting views while
+      the subscription was still live, reconciled its customer list against the
+      legacy database, and surfaced the mismatches — including active accounts that
+      existed in one system and not the other.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>What I built</h2>
+    <ul class="plain">
+      <li>
+        <strong>Order entry</strong> — customer's active parts, last-sold-price
+        autofill, multi-line orders, printable order confirmations.
+      </li>
+      <li>
+        <strong>Shop-floor tracking</strong> — a transaction log across the real
+        foundry pipeline: cores, molds, pour, grind, inspect, and out to outside
+        services (paint, coating, anneal, machining) and back.
+      </li>
+      <li>
+        <strong>Shipping &amp; billing</strong> — packing slips and bills of lading
+        generated as print-ready documents with weights derived from casting
+        weight, a ship-to address book, and a "shipped but not billed" report that
+        stamps invoice numbers.
+      </li>
+      <li>
+        <strong>Operations dashboard</strong> — backlog by due month, overdue
+        board, melt demand by metal type, revenue trend, and scrap percentage per
+        part, every chart clickable through to the underlying orders.
+      </li>
+      <li>
+        <strong>Tooling &amp; patterns</strong> — 4,100 patterns and 2,800 rack
+        locations searchable, with an empty-rack view, plus a bulk photo importer
+        that matched 3,150 pattern images to parts by parsing filename conventions.
+      </li>
+      <li>
+        <strong>Raw materials</strong> — 330 materials with dual units of measure,
+        because scrap steel is bought by the ton and consumed by the pound; receive
+        in either, stored canonically in pounds.
+      </li>
+      <li>
+        <strong>Parts &amp; price history</strong> — every price change over the
+        life of a part, reconstructed from order history and recorded with reasons
+        going forward.
+      </li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>Getting it in front of them</h2>
+    <p>
+      I deployed it onto the owner's own Windows Server — MySQL, Python, a
+      boot-time service, LAN access for the office, and a private mesh VPN so I can
+      maintain it remotely without a screen-share. The accounting side pushes
+      invoices to QuickBooks Online rather than reinventing a general ledger.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>Status</h2>
+    <p>
+      Running in pilot on the client's server against a snapshot of live data, with
+      the owner testing daily against a requirements list of his own. Final cutover
+      — freeze the old app, take a fresh dump, restore, go — is scheduled work, not
+      finished work. I'd rather say that than claim a finish line I haven't crossed.
+    </p>
+  </section>
+</CaseStudy>

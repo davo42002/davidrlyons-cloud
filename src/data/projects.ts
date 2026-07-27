@@ -50,6 +50,57 @@ export const projects: Project[] = [
     links: [{ label: "Read the case study", href: "/work/kansas-castings" }],
   },
   {
+    slug: "kansas-castings-erp",
+    name: "Foundry ERP",
+    tagline: "Replacing a $12k/yr cloud ERP for an iron foundry — data first",
+    problem:
+      "A 30-year iron foundry ran two systems in parallel: a 2007-era in-house app holding three decades of order history, and a cloud ERP costing ~$12,000/yr that every order had to be re-typed into.",
+    built:
+      "Mapped the legacy MySQL schema (16 tables, ~40k orders, 4k parts, 325 customers) including undocumented joins, extracted the incumbent ERP's data through its own reporting views while the subscription was live, then built the replacement: order entry, foundry WIP pipeline (cores → molds → pour → grind → inspect → outside services), shipping with packing slips and BOLs, invoicing with a QuickBooks Online push, scrap-rate and backlog dashboards, pattern/rack tooling with 3,150 auto-matched photos, and ton↔pound raw-materials tracking.",
+    result:
+      "Deployed and running in pilot on the client's own Windows Server with the owner testing daily. Cutover to system-of-record is scheduled, not yet done — the subscription savings are the target, not a claimed result.",
+    metrics: [
+      { label: "records migrated", value: "39,807 orders" },
+      { label: "subscription targeted", value: "~$12k / year" },
+      { label: "modules in pilot", value: "9" },
+      { label: "status", value: "pilot, cutover pending" },
+    ],
+    tech: [
+      "MySQL 8",
+      "SQL schema design",
+      "Python",
+      "QuickBooks Online API",
+      "Windows Server + Tailscale",
+    ],
+    links: [{ label: "Read the case study", href: "/work/foundry-erp" }],
+  },
+  {
+    slug: "atd-operations",
+    name: "DC Turnaround",
+    tagline:
+      "Bottom quartile to top of company standings — dashboards, tooling, 30 people",
+    problem:
+      "A multi-million-dollar distribution center sat in the bottom quartile of its company-wide standings, with high overtime, unexplained inventory variance, and missed delivery windows — and no visibility into any of it until after month-end.",
+    built:
+      "Power BI dashboards for daily order monitoring so disruptions surfaced same-day, custom Excel tooling to replace manual shift planning, targeted scheduling changes against the overtime line, and manifest/route analysis paired with driver training and DOT compliance.",
+    result:
+      "The center climbed from the bottom quartile to the top of company-wide standings — a 54.5% improvement — while overtime expense fell 15%, warehouse efficiency rose ~10%, and delivery-window success improved 7.3%.",
+    metrics: [
+      { label: "standings", value: "bottom → top" },
+      { label: "overtime expense", value: "−15%" },
+      { label: "delivery windows", value: "+7.3%" },
+      { label: "team", value: "30 people" },
+    ],
+    tech: [
+      "Power BI",
+      "Excel automation",
+      "KPI design",
+      "Route & manifest analysis",
+      "Team leadership",
+    ],
+    links: [{ label: "Read the case study", href: "/work/atd-turnaround" }],
+  },
+  {
     slug: "aitrader",
     name: "AITrader",
     tagline: "Multi-platform autonomous trading agents with eval-first discipline",

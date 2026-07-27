@@ -1,5 +1,6 @@
 ---
 import { capabilities } from "../data/capabilities";
+import { site } from "../data/site";
 ---
 
 <section class="section" id="capabilities">
@@ -22,10 +23,31 @@ import { capabilities } from "../data/capabilities";
         ))
       }
     </div>
+
+    <p class="creds reveal">
+      <span class="creds-label">Education &amp; certifications</span>
+      {site.credentials}
+    </p>
   </div>
 </section>
 
 <style>
+  .creds {
+    margin-top: var(--space-10);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--border);
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
+  }
+  .creds-label {
+    display: block;
+    margin-bottom: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--fs-label);
+    letter-spacing: var(--label-spacing);
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));

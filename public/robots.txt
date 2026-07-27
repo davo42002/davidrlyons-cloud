@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://davidrlyons.cloud/sitemap-index.xml
+Sitemap: https://www.davidrlyons.cloud/sitemap-index.xml

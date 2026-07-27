@@ -59,11 +59,11 @@ export const capabilities: CapabilityGroup[] = [
   {
     title: "Data / Integrations",
     items: [
+      "SQL & schema design",
+      "Python data tooling",
+      "Data migration & cleanup",
       "Broker & market APIs",
       "Google Workspace APIs",
-      "Email deliverability infra",
-      "Python data tooling",
-      "Persistent memory stores",
     ],
   },
 ];

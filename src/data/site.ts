@@ -12,6 +12,8 @@ export interface SiteConfig {
   taglineLead: string;
   taglineAccent: string;
   intro: string;
+  availability: string;
+  credentials: string;
   sub: string;
   photo: string;
   photoAlt: string;
@@ -26,11 +28,15 @@ export interface SiteConfig {
 
 export const site: SiteConfig = {
   name: "David R. Lyons",
-  role: "Operations Leadership & Management · AI Builder",
+  role: "Operations Leader · Data & Automation",
   taglineLead: "I lead people, manage operations,",
   taglineAccent: "and build the systems.",
   intro:
     "For 14+ years I've led and managed operations and logistics teams — developing the people while running the day-to-day, from dispatching trains across 2,000+ miles at Union Pacific to running a multi-million-dollar distribution center as a GM today. Along the way I taught myself the skillset to both build and use the tools I needed to succeed — Power BI dashboards, automations, and AI agents that turn messy operational data into faster, smarter decisions. Leadership and management, paired with the ability to build — that's the mix I bring.",
+  availability:
+    "Based in DFW, Texas · works remote across US Central · focused on supply chain, operations, and BI analytics",
+  credentials:
+    "Associate of Spatial Sciences, Texas A&M University · Google Data Analytics (Coursera), 5 courses completed",
   sub: "Operations leader who builds: 14+ years scaling teams and logistics operations, plus self-taught AI/automation that turns data into real results.",
   photo: "/portrait.jpg", // TODO: drop real headshot into /public
   photoAlt: "David R. Lyons",
@@ -38,7 +44,8 @@ export const site: SiteConfig = {
   github: "https://github.com/davo42002",
   linkedin: "https://www.linkedin.com/in/david-lyons-3a10ba111/",
   resume: "/resume", // on-site resume page (links to PDF downloads)
-  url: "https://davidrlyons.cloud",
+  // Must match the host the deploy actually serves — the apex 308s to www.
+  url: "https://www.davidrlyons.cloud",
   description:
     "David R. Lyons — operations & logistics leader and self-taught AI/automation builder. 14+ years scaling teams and operations, with Power BI, automation, and AI that drive measurable results.",
   nav: [
