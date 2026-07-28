@@ -11,6 +11,7 @@ import Recommendations from "../components/Recommendations.astro";
 import About from "../components/About.astro";
 import Footer from "../components/Footer.astro";
 import ResumeChat from "../components/ResumeChat.astro";
+import Analytics from "../components/Analytics.astro";
 
 const ogImage = new URL("/og.png", site.url).href;
 
@@ -83,6 +84,8 @@ const personSchema = {
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     />
+
+    <Analytics />
   </head>
 
   <body>

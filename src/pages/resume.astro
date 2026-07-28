@@ -1,6 +1,7 @@
 ---
 import ResumeDoc from "../components/ResumeDoc.astro";
 import { builderResume } from "../data/resume";
+import Analytics from "../components/Analytics.astro";
 ---
 
 <!doctype html>
@@ -14,6 +15,7 @@ import { builderResume } from "../data/resume";
     <style>
       body { margin: 0; }
     </style>
+    <Analytics />
   </head>
   <body>
     <ResumeDoc

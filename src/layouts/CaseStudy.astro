@@ -3,6 +3,7 @@
 // <section class="block"> elements.
 import "../styles/global.css";
 import { site } from "../data/site";
+import Analytics from "../components/Analytics.astro";
 
 interface Result {
   value: string;
@@ -61,6 +62,8 @@ const articleSchema = {
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     />
+
+    <Analytics />
   </head>
   <body>
     <main class="cs">

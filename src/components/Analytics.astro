@@ -1,0 +1,16 @@
+---
+// GoatCounter — cookieless page analytics (no consent banner required).
+// Only emitted in production builds so local dev traffic stays out of the stats.
+const enabled = import.meta.env.PROD;
+---
+
+{
+  enabled && (
+    <script
+      is:inline
+      data-goatcounter="https://davidrlyons.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js"
+    />
+  )
+}
