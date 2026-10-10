@@ -1,0 +1,167 @@
+---
+import CaseStudy from "../../layouts/CaseStudy.astro";
+
+const results = [
+  { value: "Google AI Overview", label: "ranked within 1 week" },
+  { value: "Real inbound RFQ", label: "plus more quote calls" },
+  { value: "100% inbox", label: "cold-email deliverability" },
+  { value: "11 pages", label: "rebuilt with full schema" },
+];
+const title = "How a 30-Year Foundry Got Into Google's AI Overview";
+const desc =
+  "How a small iron foundry went from invisible online to Google's AI Overview in a week — and the lead pipeline built behind it. A playbook for manufacturers.";
+---
+
+<CaseStudy
+  title={title}
+  desc={desc}
+  label="Playbook · Growth Engineering"
+  heading="How a 30-Year Foundry Got Into Google's AI Overview"
+  results={results}
+  published="2026-10-10"
+>
+  <section class="block">
+    <p>
+      Kansas Castings is a 30-year-old American iron foundry that pours specialty
+      high-chrome white iron. The product was excellent. The website wasn't. It was
+      thin and unranked, there was no inbound pipeline, and the company was
+      effectively invisible for the exact searches its buyers run, phrases like
+      "white iron castings supplier."
+    </p>
+    <p>
+      Within a week of relaunching the site, Kansas Castings showed up in Google's
+      AI Overview for a high-intent buyer query, alongside much larger national
+      foundries. Since then the site has brought in a real inbound request for
+      quote, still in process, along with a small bump in orders and more calls to
+      the owner asking for quotes. The whole effort, from building it to putting it
+      to work, has taken about six months, and it's still going.
+    </p>
+    <p>
+      None of it required a big budget or an agency. Here's what moved the needle,
+      in order.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>1. Write for the searches buyers actually run</h2>
+    <p>
+      Most small-manufacturer websites describe the company. Buyers don't search for
+      the company. They search for the part, the material, or the problem.
+    </p>
+    <p>
+      I rewrote titles, meta descriptions, and on-page copy across all 11 pages
+      around what buyers type, and replaced filler with accurate, buyer-intent
+      content. I also found a site-wide missing-H1 problem and fixed it once, at the
+      template level, instead of page by page. I did the rebuild through the
+      WordPress REST API with Python scripts, so changes were consistent and
+      repeatable.
+    </p>
+    <p>
+      The buyer phrases came from three places: the owner, who knows how his
+      customers describe what they need; Google Search Console, which shows what
+      people actually typed before landing on the site; and competitor sites, which
+      show what the market already ranks for.
+    </p>
+    <p>
+      <strong>If you're doing this:</strong> start with five or ten phrases a real
+      buyer would type. Ask the people who take the sales calls, then check them
+      against Search Console. Make sure each phrase has a page that answers it
+      plainly.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>2. Tell search engines exactly what you make</h2>
+    <p>
+      Search engines, and the AI answer engines built on top of them, read
+      structured data before they read your prose. Most small manufacturers have
+      none.
+    </p>
+    <p>
+      I added a full JSON-LD schema stack: Organization, LocalBusiness, Product, and
+      FAQ markup. That told Google, in a format it trusts, what the foundry makes,
+      where it is, and who it serves. That layer is what made the AI Overview
+      placement possible.
+    </p>
+    <p>
+      <strong>If you're doing this:</strong> Product and FAQ markup do the most for
+      a manufacturer. Answer the questions buyers ask your sales team, on the page,
+      in FAQ markup.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>3. Make sure a quote request actually arrives</h2>
+    <p>
+      A lead form that silently drops submissions is worse than no form, because you
+      never know what you lost.
+    </p>
+    <p>
+      I built a custom RFQ quote form with server-side handling, email routing, and
+      a database backup of every submission. Getting it to deliver meant debugging a
+      hosting firewall quirk and SMTP authentication. Every quote now lands in the
+      owner's inbox, and a copy is kept even if email fails.
+    </p>
+    <p>
+      <strong>If you're doing this:</strong> submit a test quote yourself every
+      month. Keep a copy of every submission somewhere other than email.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>4. Don't wait for inbound</h2>
+    <p>
+      SEO compounds, but slowly. Outbound fills the gap, as long as it doesn't
+      damage the company's main email reputation.
+    </p>
+    <p>
+      I set up a separate sending domain on Google Workspace with DKIM, SPF, and
+      DMARC authentication and a warm-up schedule. Prospects came from Apollo.io,
+      targeted by industry vertical, and Smartlead ran multi-step sequences. In
+      deliverability testing, it reached 100% inbox placement.
+    </p>
+    <p>
+      <strong>If you're doing this:</strong> never send cold email from your main
+      domain. Authenticate the sending domain and warm it up before you send a
+      single sequence.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>5. Measure from day one</h2>
+    <p>
+      GA4 and Google Search Console went in with the relaunch, so we could see which
+      searches the site showed up for and which pages earned clicks, instead of
+      guessing.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>How one person did all of this</h2>
+    <p>
+      I'm not an agency, and this wasn't a team effort. My main tool was Claude, an
+      AI assistant, which did much of the writing, scripting, and debugging with me.
+      Alongside it I ran OpenClaw, an AI agent gateway on my own server, working
+      through Codex. Together they let one person with an operations background do
+      the work of a web developer, an SEO specialist, and an email deliverability
+      engineer.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>The short version</h2>
+    <ol class="plain">
+      <li>Write each page for a search a real buyer runs.</li>
+      <li>Add structured data so search and AI engines understand what you make.</li>
+      <li>Make sure every quote request arrives, and keep a backup copy.</li>
+      <li>Run outbound from a separate, authenticated, warmed-up domain.</li>
+      <li>Measure with Search Console from day one.</li>
+    </ol>
+    <p>
+      The full project is in the
+      <a href="/work/kansas-castings">Kansas Castings case study</a>. If you run a
+      small manufacturer that's invisible online, I'm glad to
+      <a href="/#contact">compare notes</a>.
+    </p>
+  </section>
+</CaseStudy>

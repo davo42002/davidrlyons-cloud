@@ -33,7 +33,7 @@ export const projects: Project[] = [
     built:
       "Rebuilt the site's technical SEO and content end-to-end (titles, schema, copy across every page), shipped a custom RFQ lead-capture form with a full JSON-LD schema stack, then stood up a cold-outbound system: dedicated sending domain with DKIM/SPF/DMARC, warmup, Apollo prospecting, and per-vertical email sequences.",
     result:
-      "Surfaced in Google's AI Overview for a high-intent buyer query within a week of launch, and the SEO work produced a real inbound RFQ — direct revenue, not vanity metrics.",
+      "Surfaced in Google's AI Overview for a high-intent buyer query within a week of launch; the SEO work has since brought a real inbound RFQ, a small bump in orders, and more quote calls.",
     metrics: [
       { label: "ranking", value: "Google AI Overview" },
       { label: "time to rank", value: "< 1 week" },
@@ -47,7 +47,10 @@ export const projects: Project[] = [
       "Apollo + Smartlead",
       "Email deliverability",
     ],
-    links: [{ label: "Read the case study", href: "/work/kansas-castings" }],
+    links: [
+      { label: "Read the case study", href: "/work/kansas-castings" },
+      { label: "Read the playbook", href: "/writing/manufacturer-seo-ai-overview" },
+    ],
   },
   {
     slug: "kansas-castings-erp",
