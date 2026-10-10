@@ -38,7 +38,7 @@ export const site: SiteConfig = {
   credentials:
     "Associate of Spatial Sciences, Texas A&M University · Google Data Analytics (Coursera), 5 courses completed",
   sub: "Operations leader who builds: 14+ years scaling teams and logistics operations, plus self-taught AI/automation that turns data into real results.",
-  photo: "/portrait.jpg", // TODO: drop real headshot into /public
+  photo: "/portrait.jpg",
   photoAlt: "David R. Lyons",
   email: "davidr.lyons@icloud.com",
   github: "https://github.com/davo42002",
