@@ -47,7 +47,7 @@ const experience: ResumeRole[] = [
     location: "Carrollton, TX",
     dates: "2024 – Present",
     bullets: [
-      "Directed multi-million-dollar distribution center operations and spearheaded its turnaround, driving a 54.5% jump in company-wide standings through performance-driven initiatives, strategic planning, and refined data utilization.",
+      "Directed multi-million-dollar distribution center operations and spearheaded its turnaround from the bottom quartile to tied for #4 of ~110 DCs nationwide (top 5%), a 54.5% jump in company-wide standings, through performance-driven initiatives, strategic planning, and refined data utilization.",
       "Built a positive, high-performing culture across a 30-person team by leading talent acquisition, mentoring operations staff, implementing training programs, and fostering data-driven decision-making.",
       "Improved warehouse efficiency by 10% by streamlining production workflows and coaching the team to use Excel effectively for shift planning and data analysis, reducing operational bottlenecks.",
       "Improved route truck delivery window success by 7.3% and enhanced customer satisfaction through driver training programs and manifest analysis while maintaining DOT compliance.",
@@ -133,7 +133,7 @@ export const opsResume: ResumeData = {
   headline: "Operations Leadership & Supply Chain Management",
   contact,
   summary:
-    "Operations leader and manager with 14+ years building high-performing teams and running dependable operations — from a 54.5% jump in company-wide standings as a distribution-center GM to coordinating safe, on-time rail operations across 2,000+ miles. Pairs people leadership with data-driven management (Power BI, KPIs, cost reduction) to deliver measurable performance.",
+    "Operations leader and manager with 14+ years building high-performing teams and running dependable operations — from taking a distribution center to tied #4 of ~110 nationwide (top 5%) as GM to coordinating safe, on-time rail operations across 2,000+ miles. Pairs people leadership with data-driven management (Power BI, KPIs, cost reduction) to deliver measurable performance.",
   experience,
   education,
   certifications,
@@ -157,7 +157,7 @@ export const builderResume: ResumeData = {
   headline: "Operations Leadership & Management  |  AI & Automation Builder",
   contact,
   summary:
-    "Operations leader and manager (14+ years) who also builds the systems — pairing people leadership with hands-on operations management, and both with self-taught data, automation, and AI. Drove a 54.5% jump in company-wide standings as a distribution-center GM by building a positive, high-performing team and coaching it to use its data tools daily; separately builds automations and AI agents that turn operational data into faster decisions and measurable results.",
+    "Operations leader and manager (14+ years) who also builds the systems — pairing people leadership with hands-on operations management, and both with self-taught data, automation, and AI. Took a distribution center from the bottom quartile to tied #4 of ~110 nationwide (top 5%) as GM by building a positive, high-performing team and coaching it to use its data tools daily; separately builds automations and AI agents that turn operational data into faster decisions and measurable results.",
   experience,
   projects,
   education,
