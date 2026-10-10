@@ -1,0 +1,161 @@
+---
+import CaseStudy from "../../layouts/CaseStudy.astro";
+
+const results = [
+  { value: "Tied 4th of ~110", label: "DCs nationwide · top 5%" },
+  { value: "+54.5%", label: "standings improvement" },
+  { value: "−15%", label: "overtime expense" },
+  { value: "+7.3%", label: "delivery-window success" },
+];
+const title = "Turning Around a Distribution Center: Culture First";
+const desc =
+  "How a distribution center climbed from the bottom quartile to 4th of roughly 110 nationwide: build the team and the culture first, then make the tools theirs.";
+---
+
+<CaseStudy
+  title={title}
+  desc={desc}
+  label="Playbook · Operations & Leadership"
+  heading="Turning Around a Distribution Center"
+  results={results}
+  published="2026-10-09"
+>
+  <section class="block">
+    <p>
+      When I took over a multi-million-dollar distribution center, it sat in the
+      bottom quartile of its company's performance standings. Overtime ran high.
+      Inventory variance didn't have an explanation. Delivery windows got missed
+      often enough that customers noticed.
+    </p>
+    <p>
+      Going on three years later, we're tied for 4th out of roughly 110 distribution
+      centers nationwide — the top 5%. Along the way the standings improved 54.5%,
+      overtime came down 15%, and delivery-window success went up 7.3%.
+    </p>
+    <p>
+      People ask what system we put in. The honest answer is that the tools were
+      mostly already there. What changed was the team using them.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>1. Build the team before you touch the numbers</h2>
+    <p>
+      A struggling building usually has a culture problem before it has a metrics
+      problem. People stop raising issues because nothing happens when they do.
+      Supervisors manage to the month-end report because that's when they get judged.
+    </p>
+    <p>
+      So the first work was people work. I led a team of 30: hiring, mentoring, and
+      training. Day to day that meant huddles and regular team meetings,
+      one-on-ones, and getting to know every person in the building.
+    </p>
+    <p>
+      It also meant changing what happens after a miss. When we missed, I brought
+      the team the hard data and treated it as our opportunity to improve, not a
+      reason to scold or berate anyone. Once people saw a miss wouldn't turn into
+      blame, they started raising problems on shift instead of hiding them until
+      month-end.
+    </p>
+    <p>
+      <strong>If you're doing this:</strong> trust comes before tools. A team that
+      doesn't trust each other will treat any new report as something to defend
+      against.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>2. Make the tools the team's own</h2>
+    <p>
+      The DC already had Power BI and Excel. They were used the way most buildings
+      use them: someone runs a report, someone else gets judged by it.
+    </p>
+    <p>
+      I coached the team to use them as working tools. We looked at daily order
+      monitoring together, so a disruption became a staffing decision that morning
+      instead of a variance to explain at month-end. Supervisors learned to plan a
+      shift in Excel the same way, with the same inputs, instead of each one keeping
+      their own version. Streamlined workflows and that shared planning lifted
+      warehouse efficiency roughly 10%.
+    </p>
+    <p>The measures we steered by were simple:</p>
+    <ul class="plain">
+      <li><strong>Fill:</strong> are we shipping what was ordered?</li>
+      <li><strong>On-time windows:</strong> are trucks hitting the customer's window?</li>
+      <li>
+        <strong>Labor hours against volume:</strong> are we staffing to the work, or
+        to habit?
+      </li>
+    </ul>
+    <p>
+      <strong>If you're doing this:</strong> don't start by buying or building
+      software. Teach the team to use what they have, together, every day. A tool
+      becomes a tool when the people on the floor reach for it on their own.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>3. Plan ahead, and get the team to trust it</h2>
+    <p>
+      Overtime is usually treated as a budget problem. It's almost always a planning
+      problem that shows up in the budget.
+    </p>
+    <p>
+      The change that mattered most was using the Power BI planners and Excel tools
+      proactively, ahead of the shift, instead of explaining hours after it. The
+      harder part wasn't the planning. It was helping the team see that planning
+      ahead actually improves their day, and getting them to trust the process.
+    </p>
+    <p>
+      Overtime expense came down 15%. Inventory variance improved at the same time.
+      That matters, because under pressure those two numbers usually move in
+      opposite directions: cut hours and accuracy slips.
+    </p>
+    <p>
+      <strong>If you're doing this:</strong> plan the labor before the shift, and
+      keep the variance numbers in view while you do it. If accuracy drops while
+      hours drop, you've moved the cost, not removed it.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>4. Fix delivery reliability route by route</h2>
+    <p>
+      Missed delivery windows looked like one problem from the top. Up close they
+      were several smaller ones. Manifest analysis showed which routes and handoffs
+      were failing. Driver training and tighter DOT compliance closed them.
+      Route-delivery window success went up 7.3%.
+    </p>
+    <p>
+      <strong>If you're doing this:</strong> don't retrain every driver on
+      everything. Let the data name the routes and handoffs that fail, and train to
+      those.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2>The short version</h2>
+    <ol class="plain">
+      <li>Build the team and the culture first. Treat a miss as data, not blame.</li>
+      <li>Teach the team to use the tools they already have, together, daily.</li>
+      <li>Plan labor ahead of the shift, and help the team trust it.</li>
+      <li>Fix delivery reliability where the data says it's broken.</li>
+    </ol>
+    <p>
+      Overtime doesn't drop 15% because a report says it should. It drops because
+      supervisors trust the numbers, the crew trusts the supervisors, and problems
+      get raised on shift instead of discovered at month-end.
+    </p>
+    <p>
+      The full results are in the
+      <a href="/work/atd-turnaround">DC turnaround case study</a>. If you're running
+      a building that's stuck at the bottom of the standings, I'm glad to
+      <a href="/#contact">compare notes</a>.
+    </p>
+  </section>
+
+  <p class="note">
+    Figures are the relative performance improvements reported on my résumé. No
+    employer-internal data, reporting, or systems are reproduced here.
+  </p>
+</CaseStudy>

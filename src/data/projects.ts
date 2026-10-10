@@ -78,15 +78,15 @@ export const projects: Project[] = [
     slug: "atd-operations",
     name: "DC Turnaround",
     tagline:
-      "Bottom quartile to top of company standings — culture first, then coaching 30 people",
+      "Bottom quartile to top 5% of ~110 DCs — culture first, then coaching 30 people",
     problem:
       "A multi-million-dollar distribution center sat in the bottom quartile of its company-wide standings, with high overtime, unexplained inventory variance, and missed delivery windows — and no visibility into any of it until after month-end.",
     built:
       "A positive, accountable team culture first. Then coaching the team to use the Power BI and Excel the DC already had as everyday tools: daily order monitoring so disruptions surfaced same-day, and one standard way to plan a shift. Plus targeted scheduling changes against the overtime line, and manifest/route analysis paired with driver training and DOT compliance.",
     result:
-      "The center climbed from the bottom quartile to the top of company-wide standings — a 54.5% improvement — while overtime expense fell 15%, warehouse efficiency rose ~10%, and delivery-window success improved 7.3%.",
+      "The center climbed from the bottom quartile to tied for 4th of roughly 110 distribution centers nationwide (top 5%) — a 54.5% improvement in standings — while overtime expense fell 15%, warehouse efficiency rose ~10%, and delivery-window success improved 7.3%.",
     metrics: [
-      { label: "standings", value: "bottom → top" },
+      { label: "of ~110 DCs", value: "tied 4th" },
       { label: "overtime expense", value: "−15%" },
       { label: "delivery windows", value: "+7.3%" },
       { label: "team", value: "30 people" },
@@ -98,7 +98,10 @@ export const projects: Project[] = [
       "Power BI",
       "Route & manifest analysis",
     ],
-    links: [{ label: "Read the case study", href: "/work/atd-turnaround" }],
+    links: [
+      { label: "Read the case study", href: "/work/atd-turnaround" },
+      { label: "Read the playbook", href: "/writing/distribution-center-turnaround" },
+    ],
   },
   {
     slug: "aitrader",
