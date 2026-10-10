@@ -48,10 +48,10 @@ const experience: ResumeRole[] = [
     dates: "2024 – Present",
     bullets: [
       "Directed multi-million-dollar distribution center operations and spearheaded its turnaround, driving a 54.5% jump in company-wide standings through performance-driven initiatives, strategic planning, and refined data utilization.",
-      "Improved warehouse efficiency by 10% through the design of custom Excel tools and streamlined production workflows, improving team proficiency in data analysis and reducing operational bottlenecks.",
+      "Built a positive, high-performing culture across a 30-person team by leading talent acquisition, mentoring operations staff, implementing training programs, and fostering data-driven decision-making.",
+      "Improved warehouse efficiency by 10% by streamlining production workflows and coaching the team to use Excel effectively for shift planning and data analysis, reducing operational bottlenecks.",
       "Improved route truck delivery window success by 7.3% and enhanced customer satisfaction through driver training programs and manifest analysis while maintaining DOT compliance.",
-      "Implemented real-time supply chain monitoring using OTIF (On-Time In Full) metrics and Power BI dashboards to track customer orders daily, enhancing visibility and enabling rapid disruption response.",
-      "Cultivated a high-performing 30-person team by leading talent acquisition, mentoring operations staff, implementing training programs, and fostering data-driven decision-making.",
+      "Coached supervisors to monitor customer orders daily with OTIF (On-Time In Full) metrics and Power BI dashboards, enhancing visibility and enabling rapid disruption response.",
       "Improved financial performance by reducing overtime expenses 15% and improving inventory variance, mitigating missed product sales through strategic cost-saving measures.",
     ],
   },
@@ -157,7 +157,7 @@ export const builderResume: ResumeData = {
   headline: "Operations Leadership & Management  |  AI & Automation Builder",
   contact,
   summary:
-    "Operations leader and manager (14+ years) who also builds the systems — pairing people leadership with hands-on operations management, and both with self-taught data, automation, and AI. Drove a 54.5% jump in company-wide standings as a distribution-center GM while shipping Power BI analytics, automations, and AI agents that turn operational data into faster decisions and measurable results.",
+    "Operations leader and manager (14+ years) who also builds the systems — pairing people leadership with hands-on operations management, and both with self-taught data, automation, and AI. Drove a 54.5% jump in company-wide standings as a distribution-center GM by building a positive, high-performing team and coaching it to use its data tools daily; separately builds automations and AI agents that turn operational data into faster decisions and measurable results.",
   experience,
   projects,
   education,

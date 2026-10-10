@@ -78,11 +78,11 @@ export const projects: Project[] = [
     slug: "atd-operations",
     name: "DC Turnaround",
     tagline:
-      "Bottom quartile to top of company standings — dashboards, tooling, 30 people",
+      "Bottom quartile to top of company standings — culture first, then coaching 30 people",
     problem:
       "A multi-million-dollar distribution center sat in the bottom quartile of its company-wide standings, with high overtime, unexplained inventory variance, and missed delivery windows — and no visibility into any of it until after month-end.",
     built:
-      "Power BI dashboards for daily order monitoring so disruptions surfaced same-day, custom Excel tooling to replace manual shift planning, targeted scheduling changes against the overtime line, and manifest/route analysis paired with driver training and DOT compliance.",
+      "A positive, accountable team culture first. Then coaching the team to use the Power BI and Excel the DC already had as everyday tools: daily order monitoring so disruptions surfaced same-day, and one standard way to plan a shift. Plus targeted scheduling changes against the overtime line, and manifest/route analysis paired with driver training and DOT compliance.",
     result:
       "The center climbed from the bottom quartile to the top of company-wide standings — a 54.5% improvement — while overtime expense fell 15%, warehouse efficiency rose ~10%, and delivery-window success improved 7.3%.",
     metrics: [
@@ -92,11 +92,11 @@ export const projects: Project[] = [
       { label: "team", value: "30 people" },
     ],
     tech: [
-      "Power BI",
-      "Excel automation",
-      "KPI design",
-      "Route & manifest analysis",
       "Team leadership",
+      "Coaching & training",
+      "KPI design",
+      "Power BI",
+      "Route & manifest analysis",
     ],
     links: [{ label: "Read the case study", href: "/work/atd-turnaround" }],
   },
