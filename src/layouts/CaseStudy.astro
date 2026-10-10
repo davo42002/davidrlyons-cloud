@@ -17,9 +17,13 @@ interface Props {
   heading: string;
   results: Result[];
   stack: string[];
+  /** ISO dates (YYYY-MM-DD) for Article structured data. */
+  published: string;
+  modified?: string;
 }
 
-const { title, desc, label, heading, results, stack } = Astro.props;
+const { title, desc, label, heading, results, stack, published, modified } =
+  Astro.props;
 
 const canonical = new URL(Astro.url.pathname, site.url).href;
 const articleSchema = {
@@ -28,11 +32,15 @@ const articleSchema = {
   headline: title,
   description: desc,
   url: canonical,
+  mainEntityOfPage: canonical,
   image: new URL("/og.png", site.url).href,
+  datePublished: published,
+  dateModified: modified ?? published,
   author: {
     "@type": "Person",
     name: site.name,
     url: site.url,
+    sameAs: [site.github, site.linkedin],
   },
 };
 ---
